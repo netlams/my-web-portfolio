@@ -1,67 +1,17 @@
-@import url("http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather:400,300,700,900|Droid+Sans:400,700");
-
-/* Reset Styles */
-/*
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline; }
-
-html {
-  line-height: 1; }
-
-ol, ul {
-  list-style: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle; }
-
-q, blockquote {
-  quotes: none; }
-
-  q:before, q:after, blockquote:before, blockquote:after {
-    content: "";
-    content: none; }
-
-a img {
-  border: none; }
-
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
-  display: block; }
-
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-*/
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
 
 /* Custom Styles */
+body {
+  font-family: 'Oxygen', sans-serif;
+}
 
 #main-nav-btn {
+  cursor: pointer;
+  position: fixed;
+  z-index: 1; /* above content */
   margin: 10px;
-  font-size: 3em;
-  opacity: .8;
+  font-size: 2em;
+  opacity: .5;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
@@ -70,19 +20,63 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 #main-nav-btn:hover {
   opacity: 1;
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2);
+  -webkit-transform: scale(1.4);
+  -moz-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  transform: scale(1.4);
 }
 
 #page-content-wrapper {
+  margin: 0 auto;
   padding: 0px;
 }
 
-#myCarousel {
-  top:0px;
+.divider {
+  border: 1px solid black;
 }
+
+.whitespace-top {
+  padding: 15px 0px;
+}
+
+/* re-position caption text to center */
+.carousel-caption {
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: initial;
+}
+
+.greeting {
+  padding: 10px;
+}
+
+.sidebar-nav li a:hover {
+  color: #F7B865;
+}
+
+li.active a{
+  font-weight: bolder;
+  background: rgba(255,255,255,0.2);
+}
+
+footer {
+  position: relative;
+  z-index: 1; /* above content */
+  margin: 0 auto;
+  bottom: 0;
+  left: 0; /* center */
+  right: 0; /* center */
+  text-align: center;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+footer.toggled {
+  left: 250px; /* center */
+}
+
 .ng-enter.ng-enter-active,
 .ng-leave {
   opacity: 1;

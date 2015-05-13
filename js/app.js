@@ -23,10 +23,6 @@
       templateUrl: 'partials/projects.html',
       controller: 'ProjectsController'
     }).
-    when('/skills', {
-      templateUrl: 'partials/skills.html',
-      controller: 'SkillsController'
-    }).
     otherwise({
       redirectTo: '/'
     });
