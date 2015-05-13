@@ -11,17 +11,12 @@
   siteControllers.controller('AboutController', ['$scope', function($scope) {
       $scope.name = 'Dau Lam';
       $scope.profilepic = 'images/self.jpg';
-      $scope.toggleMenu = function() {
-        console.log("clicked");
-          // e.preventDefault();
-          $("#wrapper").toggleClass("toggled");
-      };
   }]);
   
   /* Projects page Ctrl */
   siteControllers.controller('ProjectsController', ['$scope', function($scope) {
-      $scope.name = 'Dau Lam';
-      $scope.profilepic = 'images/self.jpg';
+      $scope.projects = projects;
+      $scope.jim = 'ice';
   }]);
 
   /* Navigation Module Ctrl */
@@ -29,9 +24,13 @@
       $scope.toggleNav = function() {
                       if($("#wrapper").hasClass("toggled")) {
                         console.log("show nav");
+                        $('#main-nav-btn').removeClass('glyphicon glyphicon-list')
+                          .addClass('glyphicon glyphicon-circle-arrow-left');
                       }
                       else {
                         console.log("hide nav");
+                        $('#main-nav-btn').removeClass('glyphicon glyphicon-circle-arrow-left')
+                          .addClass('glyphicon glyphicon-list');
                       }
                       $("#wrapper").toggleClass("toggled");
                       $('footer').toggleClass("toggled");
@@ -41,7 +40,7 @@
       $scope.isSet = function(checkTab) {
            return this.tab === checkTab;
                     };
-      $scope.setTab = function(setTab) {
+      $scope.setActive = function(setTab) {
            this.tab = setTab;
                     };
   }]);
@@ -55,5 +54,51 @@
     };
   });
 
-
+  /* Data.json */
+  var projects = [
+      {
+        name: 'Custom UNIX Shell',
+        description: "running shell",
+        languages: [
+          "C",
+          "C++"
+        ],
+        startDate: 1397490980837,
+        endDate: 1431491945,
+        images: [
+          "bg-soar2.png",
+          "bg-soar3.png",
+          "self.jpg"
+        ],
+        link: ''
+      },
+      {
+        name: 'File System Design & Implementation',
+        description: "FAT",
+        languages: [
+          "C",
+          "C++"
+        ],
+        startDate: 1397490980837,
+        endDate: 1431491945,
+        images: [
+          "bg-soar2.png",
+          "bg-soar3.png",
+          "self.jpg"
+        ],
+        link: ''
+      },
+      {
+        name: 'Java',
+        description: "FAT",
+        languages: [
+          "C",
+          "C++"
+        ],
+        startDate: 1397490980837,
+        endDate: 1431491945,
+        images: [],
+        link: ''
+      }
+  ]
 })();

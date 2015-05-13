@@ -3,17 +3,19 @@
 	<ul class="sidebar-nav">
 		<li class="sidebar-brand">	<a href="#/">Dau Lam</a>	</li>
 		<li data-ng-class="{active: isSet(1)}">	
-			<a data-ng-click="setTab(1)" href="#/home">home</a> 	
-		</li>
+			<a data-ng-click="setActive(1)" href="#/home"> 
+				<span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a> 	</li>
 		<li data-ng-class="{active: isSet(2)}"> 
-			<a data-ng-click="setTab(2)" href="#/about">about</a> 
-		</li>
+			<a data-ng-click="setActive(2)" href="#/about">
+				<span class="glyphicon glyphicon-user" aria-hidden="true"></span> About</a> </li>
 		<li data-ng-class="{active: isSet(3)}"> 
-			<a data-ng-click="setTab(3)" href="#/projects">projects</a> 
-		</li>
+			<a data-ng-click="setActive(3)" href="#/projects">
+				<span class="glyphicon glyphicon-send" aria-hidden="true"></span> Projects</a> </li>
 		<li class="divider"></li>
-		<li> <a href="https://github.com/netlams">github</a> </li>
-		<li> <a href="https://linkedin.com/in/daulam">linkedin</a> </li>
+		<li> <a href="https://github.com/netlams">
+			<span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Github</a> </li>
+		<li> <a href="https://linkedin.com/in/daulam">
+			<span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Linkedin</a> </li>
 	</ul>
 </div> <!-- end sidebar -->
-<span id="main-nav-btn" class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true" data-ng-click="toggleNav()" ></span>
+<span id="main-nav-btn" class="glyphicon glyphicon-list" aria-hidden="true" data-ng-click="toggleNav()" ></span>
