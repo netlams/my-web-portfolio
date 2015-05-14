@@ -66,8 +66,8 @@
         startDate: 1397490980837,
         endDate: 1431491945,
         images: [
-          "bg-soar2.png",
-          "bg-soar3.png",
+          "bg-night.png",
+          "bg-soar.png",
           "self.jpg"
         ],
         link: ''
@@ -82,8 +82,8 @@
         startDate: 1397490980837,
         endDate: 1431491945,
         images: [
-          "bg-soar2.png",
-          "bg-soar3.png",
+          "bg-night.png",
+          "bg-soar.png",
           "self.jpg"
         ],
         link: ''

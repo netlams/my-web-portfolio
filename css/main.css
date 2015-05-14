@@ -5,6 +5,10 @@ body {
   font-family: 'Oxygen', sans-serif;
 }
 
+h1.about {
+  padding-left: 8px;
+}
+
 #main-nav-btn {
   cursor: pointer;
   position: fixed;
@@ -39,11 +43,21 @@ body {
   padding: 15px 0px;
 }
 
+
+#myCarousel {
+  box-shadow: 0px 3px 5px gray;
+}
+
 /* re-position caption text to center */
 .carousel-caption {
   top: 50%;
   transform: translateY(-50%);
   bottom: initial;
+}
+
+#home-bottom {
+  background-color: red;
+  height: 100%;
 }
 
 .greeting {
@@ -76,11 +90,13 @@ li {
   background-color: #F2F2F2;
   padding: 1px 10px;
   margin: 5px;
+  box-shadow: 2px 2px 5px gray;
 }
 
 .tags {
-  padding: 0 2px;
+  padding: 0 5px;
   overflow: none;
+  border: 1px solid gray;
 }
 
 footer {
