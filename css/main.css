@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Oxygen);
+@import url(http://fonts.googleapis.com/css?family=Yellowtail);
 
 /* Custom Styles */
 body {
@@ -9,13 +10,18 @@ h1.about {
   padding-left: 8px;
 }
 
+a.email, a.email::before, a.email::after {
+  text-decoration: none;
+  color: #999;
+}
+
 #main-nav-btn {
   cursor: pointer;
   position: fixed;
   z-index: 1; /* above content */
   margin: 10px;
   font-size: 2em;
-  opacity: .2;
+  opacity: .4;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
@@ -30,6 +36,21 @@ h1.about {
   transform: scale(1.4);
 }
 
+#top-bar {
+  background-color: white;
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 3.5em;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1; /* above content */
+  opacity: 0;
+  font-family: 'Yellowtail', cursive;
+}
+
 #page-content-wrapper {
   margin: 0 auto;
   padding: 0px;
@@ -42,7 +63,6 @@ h1.about {
 .whitespace-top {
   padding: 15px 0px;
 }
-
 
 #myCarousel {
   box-shadow: 0px 3px 5px gray;
@@ -65,7 +85,8 @@ h1.about {
 }
 
 .carousel-caption {
-  bottom: 40px;
+  /*bottom: 40px;*/
+  top: 45%;
 }
 
 .sidebar-nav li a:hover {
@@ -117,6 +138,15 @@ footer.toggled {
   left: 250px; /* center */
 }
 
+.pwindow {
+  background-image: url(../images/bg-soar_opt.png);
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 600px;
+}
+
 .ng-enter.ng-enter-active,
 .ng-leave {
   opacity: 1;
@@ -131,3 +161,10 @@ footer.toggled {
   overflow: hidden;
 }
 
+@media(max-width:400px) {
+    #wrapper.toggled, #wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}

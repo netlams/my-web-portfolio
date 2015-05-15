@@ -33,5 +33,20 @@
 				<p>&copy; 2015 - Dau Lam</p>
 			</footer> -->
 		</div> <!-- end wrapper -->
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				/* change opacity on scroll */
+				$(window).scroll(function() {
+				var scrollPercent = ($(window).scrollTop() / $('#wrapper').outerHeight());
+				    if ($(window).scrollTop() > 100) {
+				        $('#top-bar').css("opacity", scrollPercent);
+				    }
+				    else{
+				        $('#top-bar').css("opacity", scrollPercent);
+				    }
+				});
+			});
+		</script>
 	</body>
 </html>
