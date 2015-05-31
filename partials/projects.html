@@ -1,45 +1,47 @@
 <section id="projects-page">
   <div class="container">
     <div class="whitespace-top"></div>
+      
+      <header> <h1>My Projects</h1> </header>
 
-      <div class="search">
-          <header> <h1>My Projects</h1> </header>
-
+      <section id="search">
         <div class="row">
           <div class="col-sm-6 col-xs-12"> <label>Search: </label>
             <input data-ng-model="query" placeholder="filter for . . ." size="36" autofocus>
           </div>
           <div class="col-sm-6 col-xs-12">
-            <label>Sort by:</label>
+            <label>Sort name by:</label>
             <label> <input type="radio" data-ng-model="direction" name="direction" checked>
               ascending </label>
             <label> <input type="radio" data-ng-model="direction" name="direction" value="reverse">
               descending </label>
           </div>
         </div>
-      </div><!-- END search -->
+      </section><!-- END search formgroup-->
+      
+      <section id="project-listing">
+        <ul class="projectList list-group">
+          <div class="row">
+            <li class="list-group-item projects" data-ng-animate="'animate'" data-ng-repeat="item in projects | filter: query | orderBy: 'name':direction">
+              <h3>{{item.name}}</h3>
+              <p>{{item.description}}</p>
 
-      <ul class="projectList list-group">
-        <div class="row">
-          <li class="list-group-item projects" data-ng-animate="'animate'" data-ng-repeat="item in projects | filter: query">
-          <!-- <img data-ng-src="images/{{item.shortname}}_tn.jpg" alt="Photo of {{item.name}}"> -->
-            <h2>{{item.name}}</h2>
-            <h3>{{item.description}}</h3>
-
-            <div class="row">
-              <div data-ng-show="item.images.length" data-ng-repeat="image in item.images" class="col-xs-6 col-md-2">
-                <span class="thumbnail">
-                  <img data-ng-src="images/{{image}}" alt="Image # {{$index+1}}">
-                </span>
+              <div class="row">
+                <div data-ng-show="item.images.length" data-ng-repeat="image in item.images" class="col-xs-3 col-md-3">
+                  <span class="thumbnail">
+                    <a href="images/project_images/{{image}}" target="_blank">
+                      <img data-ng-src="images/project_images/{{image}}" alt="Image # {{$index+1}}">
+                    </a>
+                  </span>
+                </div>
               </div>
-            </div>
 
-            <p><span class="tags" data-ng-repeat="lang in item.languages">{{lang}}</span></p>
-            <p class="pull-right">to {{item.endDate | date}}</p>
-            <p>From {{item.startDate | date}}</p>
-
-          </li>
-        </div>
-      </ul>
+              <p><span class="tags" data-ng-repeat="lang in item.languages">{{lang}}</span></p>
+              <p>{{item.endDate | date:'MMMM yyyy'}}</p>
+              <p data-ng-show="item.link.length"><a href="{{item.link}}" target="_blank">View project on Github.com</a></p>
+            </li>
+          </div>
+        </ul>
+      </section><!-- END project-listing -->
     </div>
 </section>

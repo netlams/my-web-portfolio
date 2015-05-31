@@ -2,6 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Yellowtail);
 
 /* Custom Styles */
+
 body {
   font-family: 'Oxygen', sans-serif;
 }
@@ -48,6 +49,9 @@ a.email, a.email::before, a.email::after {
   top: 0;
   z-index: 1; /* above content */
   opacity: 0;
+}
+
+.cursive-font {
   font-family: 'Yellowtail', cursive;
 }
 
@@ -56,44 +60,16 @@ a.email, a.email::before, a.email::after {
   padding: 0px;
 }
 
-.divider {
-  border: 1px solid black;
-}
-
 .whitespace-top {
   padding: 15px 0px;
 }
 
-#myCarousel {
-  box-shadow: 0px 3px 5px gray;
-}
-
-/* re-position caption text to center */
-.carousel-caption {
-  top: 50%;
-  transform: translateY(-50%);
-  bottom: initial;
-}
-
-#home-bottom {
-  background-color: red;
-  height: 100%;
-}
-
-.greeting {
-  padding: 10px;
-}
-
-.carousel-caption {
-  /*bottom: 40px;*/
-  top: 45%;
-}
-
 .sidebar-nav li a:hover {
-  color: #F7B865;
+  color: #D87D15; /* orange color */
 }
 
-li.active a{
+.sidebar-nav li.active a{
+  color: #D87D15; /* orange color */
   font-weight: bolder;
   background: rgba(255,255,255,0.2);
 }
@@ -106,6 +82,66 @@ ul {
 li {
   list-style-type: none;
 }
+
+.divider {
+  border: 1px solid black;
+}
+
+/* Home page */
+
+#myCarousel {
+  box-shadow: 0px 3px 5px gray;
+}
+
+/* re-position caption text to center */
+.cover-text {
+  top: 60%;
+  transform: translateY(-50%);
+  bottom: initial;
+}
+
+.cover-text h1 {
+  font-size: 2.5em;
+}
+
+.cover-text p {
+  font-size: 1em;
+}
+
+.cover-background {
+  background-image: url(../images/bg-soar_opt.png);
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+.greeting {
+  padding: 10px;
+}
+
+/* About page */
+
+.skill-bar {
+  background: #CCC;
+  display: table;
+  height: 5px;
+  width: 100%;
+  margin: 10px -2px 20px -2px;
+}
+
+.skill-bar .skill-rate-on {
+  background: #D87D15;
+}
+
+.skill-rate-on, .skill-rate-off {
+  display: table-cell;
+  border-left: 2px solid #FFF;
+  border-right: 2px solid #FFF;
+}
+
+/* Projects page */
 
 .projects {
   background-color: #F2F2F2;
@@ -120,7 +156,18 @@ li {
   border: 1px solid gray;
 }
 
-footer {
+.crop {
+ height: 100px;
+ width: 100px;
+ overflow: hidden;
+}
+
+.crop img {
+ height: 100px;
+ width: auto;
+}
+
+footer { /* in-progress */
   position: relative;
   z-index: 1; /* above content */
   margin: 0 auto;
@@ -135,16 +182,7 @@ footer {
 }
 
 footer.toggled {
-  left: 250px; /* center */
-}
-
-.pwindow {
-  background-image: url(../images/bg-soar_opt.png);
-  background-position: center 0;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 600px;
+  /* in-progress left: 250px;*/ /* center */
 }
 
 .ng-enter.ng-enter-active,
@@ -161,10 +199,16 @@ footer.toggled {
   overflow: hidden;
 }
 
+/* specials rules */
+
 @media(max-width:400px) {
     #wrapper.toggled, #wrapper {
         position: absolute;
         top: 0;
         left: 0;
+    }
+    .cover-background {
+      background-image: url(../images/bg-soar_opt-min.png);
+      height: 55vh;
     }
 }

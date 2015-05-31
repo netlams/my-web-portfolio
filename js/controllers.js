@@ -14,9 +14,11 @@
   }]);
   
   /* Projects page Ctrl */
-  siteControllers.controller('ProjectsController', ['$scope', function($scope) {
-      $scope.projects = projects;
-      $scope.jim = 'ice';
+  siteControllers.controller('ProjectsController', ['$scope', '$http', function($scope, $http) {
+      $scope.projects = [];
+      $http.get('js/data.json').success(function(data) {
+        $scope.projects = data;
+      });
   }]);
 
   /* Navigation Module Ctrl */
@@ -53,52 +55,4 @@
       controller: 'NavController'
     };
   });
-
-  /* Data.json */
-  var projects = [
-      {
-        name: 'Custom UNIX Shell',
-        description: "running shell",
-        languages: [
-          "C",
-          "C++"
-        ],
-        startDate: 1397490980837,
-        endDate: 1431491945,
-        images: [
-          "bg-night.png",
-          "bg-soar.png",
-          "self.jpg"
-        ],
-        link: ''
-      },
-      {
-        name: 'File System Design & Implementation',
-        description: "FAT",
-        languages: [
-          "C",
-          "C++"
-        ],
-        startDate: 1397490980837,
-        endDate: 1431491945,
-        images: [
-          "bg-night.png",
-          "bg-soar.png",
-          "self.jpg"
-        ],
-        link: ''
-      },
-      {
-        name: 'Java',
-        description: "FAT",
-        languages: [
-          "C",
-          "C++"
-        ],
-        startDate: 1397490980837,
-        endDate: 1431491945,
-        images: [],
-        link: ''
-      }
-  ]
 })();
