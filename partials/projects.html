@@ -1,7 +1,7 @@
 <section id="projects-page">
   <div class="container">
     <div class="whitespace-top"></div>
-      
+
       <header> <h1>My Projects</h1> </header>
 
       <section id="search">
@@ -18,7 +18,7 @@
           </div>
         </div>
       </section><!-- END search formgroup-->
-      
+
       <section id="project-listing">
         <ul class="projectList list-group">
           <div class="row">
@@ -29,7 +29,7 @@
               <div class="row">
                 <div data-ng-show="item.images.length" data-ng-repeat="image in item.images" class="col-xs-3 col-md-3">
                   <span class="thumbnail">
-                    <a href="images/project_images/{{image}}" target="_blank">
+                    <a href="images/project_images/{{image}}" target="_blank" title="click for bigger image">
                       <img data-ng-src="images/project_images/{{image}}" alt="Image # {{$index+1}}">
                     </a>
                   </span>
